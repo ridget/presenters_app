@@ -37,4 +37,11 @@ class UserPresenter < SimpleDelegator
     __getobj__
   end
 
+  # Enables us to call Presenter.wrap on a collection of objects and instatiate those objects
+  def self.wrap(collection)
+    collection.map do |obj|
+      new obj
+    end
+  end
+
 end
