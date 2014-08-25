@@ -1,0 +1,15 @@
+.page-header
+  %h1 Listing users
+
+.row
+  .col-md-12
+    %table.table.table-striped
+      %tr
+
+
+      - @users.each do |user|
+        %tr
+
+    %br
+
+    = link_to 'New User', new_user_path, id: :new_user_link, class: 'btn btn-primary btn-sm'

@@ -1,0 +1,6 @@
+.page-header
+  %h1 New user
+.row
+  .col-md-12
+    = render 'form'
+    = link_to 'Cancel', users_path, id: :cancel_new_user_link, class: 'btn btn-sm btn-warning'

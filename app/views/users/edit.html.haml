@@ -1,0 +1,6 @@
+.page-header
+  %h1 Editing user
+.row
+  .col-md-12
+    = render 'form'
+    = link_to 'Cancel', user_path(@user), id: :cancel_edit_user_link, class: 'btn btn-sm btn-warning'
