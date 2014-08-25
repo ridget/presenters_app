@@ -7,3 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
   Rake::Task['db:fixtures:load'].invoke
+  User.delete_all
+  Preference.delete_all
+  user = User.create(:first_name => "Tom", :last_name => "Ridge", :description => "I have an odd obsession with Lego", :title => "Mr", :profile_link => "https://twitter.com/tjridge", :avatar => "chicken" )
+  Preference.create(:user => user, :name => "Pizza")
+  Preference.create(:user => user, :name => "Chips")
+  Preference.create(:user => user, :name => "Burritos")

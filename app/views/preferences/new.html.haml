@@ -1,0 +1,6 @@
+.page-header
+  %h1 New preference
+.row
+  .col-md-12
+    = render 'form'
+    = link_to 'Cancel', preferences_path, id: :cancel_new_preference_link, class: 'btn btn-sm btn-warning'

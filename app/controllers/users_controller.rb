@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = UserPresenter.new(@user)
   end
 
   def new

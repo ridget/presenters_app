@@ -1,0 +1,8 @@
+.row
+  .col-md-12
+
+    %p
+      %b Name:
+      = @preference.name
+  
+    = link_to 'Edit', edit_preference_path(@preference), id: :edit_preference_link, class: 'btn btn-sm btn-primary'

@@ -1,0 +1,17 @@
+.page-header
+  %h1 Listing preferences
+
+.row
+  .col-md-12
+    %table.table.table-striped
+      %tr
+        %th Name
+
+
+      - @preferences.each do |preference|
+        %tr
+          %td= link_to preference.name, preference_path(preference)
+
+    %br
+
+    = link_to 'New Preference', new_preference_path, id: :new_preference_link, class: 'btn btn-primary btn-sm'

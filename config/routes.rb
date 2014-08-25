@@ -1,4 +1,6 @@
 PresentersApp::Application.routes.draw do
+  resources :preferences
+
   resources :users
 
   resources(:selections, only: :index) { resources :selections, except: :show }

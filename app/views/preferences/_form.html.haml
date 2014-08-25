@@ -1,0 +1,15 @@
+= form_for @preference, html: { "role" =>"form", class: "form-horizontal"} do |f|
+  - if @preference.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@preference.errors.count, 'error')} prohibited this preference from being saved:"
+      %ul
+        - @preference.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :name, class: 'col-md-2 control-label'
+    .col-md-6
+      = f.text_field :name, class: 'form-control input-sm'
+  .form-group
+    .col-md-6.col-md-offset-2
+      = f.submit 'Save', class: 'btn btn-success btn-sm'

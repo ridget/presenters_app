@@ -1,22 +1,19 @@
 .page-header
-  %h1 #{@user.title} #{@user.first_name} #{@user.last_name}
+  %h1 #{@user.full_name_with_title}
 .row
   .col-md-12
     .row
       .col-md-12
-        = link_to if @user.profile_link.present?, image_tag("avatars/#{avatar_name(@user)}", class: "avatar"), @user.profile_link
+        = @user.avatar_link
     .row
       .col-md-12
         %p
           Preferences:
-          = @user.preferences.map(&:name)
+          = @user.preference_names
     .row
       .col-md-12
         %p
           Description:
-          - if @user.description.present?
-            = @user.description
-          - else
-            = "This User hasn't filled in their description yet."
+          = @user.description
 
     = link_to 'Edit', edit_user_path(@user), id: :edit_user_link, class: 'btn btn-sm btn-primary'
